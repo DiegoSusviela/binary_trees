@@ -2,7 +2,7 @@
 
 void binary_tree_delete(binary_tree_t *tree)
 {
-    if (!tree)
-        return;
-    liberar_arbol(tree);
+	if (!tree)
+		return;
+	liberar_arbol(tree);
 }
