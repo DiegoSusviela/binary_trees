@@ -22,5 +22,6 @@ binary_tree_t *remover_der(binary_tree_t *a_remover);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
+void binary_tree_delete(binary_tree_t *tree);
 
 #endif /* HANDLERS_H */

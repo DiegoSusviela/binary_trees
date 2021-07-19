@@ -85,4 +85,3 @@ binary_tree_t *remover_der(binary_tree_t *a_remover)
 	a_remover->parent = NULL;
 	return (a_remover);
 }
-
