@@ -47,7 +47,7 @@ binary_tree_t *crear_nodo(int valor)
 	binary_tree_t *nuevo_nodo = malloc(sizeof(binary_tree_t));
 	if (!nuevo_nodo)
 		return (NULL);
-	
+	nuevo_nodo->n = valor;
 	nuevo_nodo->right = NULL;
 	nuevo_nodo->left = NULL;
 	return (nuevo_nodo);
