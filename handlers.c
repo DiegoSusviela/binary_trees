@@ -1,4 +1,4 @@
-#include "binaries.h"
+#include "binary_trees.h"
 
 binary_tree_t *padre(binary_tree_t *nodo)
 {
