@@ -50,6 +50,7 @@ binary_tree_t *crear_nodo(int valor)
 	nuevo_nodo->n = valor;
 	nuevo_nodo->right = NULL;
 	nuevo_nodo->left = NULL;
+	nuevo_nodo->parent = NULL;
 	return (nuevo_nodo);
 }
 
