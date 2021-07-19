@@ -25,13 +25,15 @@ binary_tree_t *existe(binary_tree_t *nodo)
 void insert_der(binary_tree_t *a_insertar, binary_tree_t *padre)
 {
 	padre->right = a_insertar;
-	a_insertar->parent = padre;
+	if (a_insertar)
+		a_insertar->parent = padre;
 }
 
 void insert_izq(binary_tree_t *a_insertar, binary_tree_t *padre)
 {
 	padre->left = a_insertar;
-	a_insertar->parent = padre;
+	if (a_insertar)
+		a_insertar->parent = padre;
 }
 /*
 void swap_der(binary_tree_t *padre)
