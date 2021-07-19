@@ -22,14 +22,16 @@ binary_tree_t *existe(binary_tree_t *nodo)
 	return (NULL);
 }
 
-void insert_der(binary_tree_t *a_insertar, binary_tree_t *lugar)
+void insert_der(binary_tree_t *a_insertar, binary_tree_t *padre)
 {
-	lugar->right = a_insertar;
+	padre->right = a_insertar;
+	a_insertar->parent = padre;
 }
 
-void insert_izq(binary_tree_t *a_insertar, binary_tree_t *lugar)
+void insert_izq(binary_tree_t *a_insertar, binary_tree_t *padre)
 {
-	lugar->left = a_insertar;
+	padre->left = a_insertar;
+	a_insertar->parent = padre;
 }
 /*
 void swap_der(binary_tree_t *padre)
