@@ -11,6 +11,6 @@
 #include <ctype.h>
 
 #include "trees.h"
-#include "handlers.h"
+#include "binary_trees.h"
 
 #endif /* ALGO_H */
