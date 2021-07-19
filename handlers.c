@@ -1,18 +1,24 @@
 #include "binary_trees.h"
 
-binary_tree_t *padre(binary_tree_t *nodo)
+
+binary_tree_t *padre(const binary_tree_t *nodo)
 {
 	return (nodo->parent);
 }
 
-binary_tree_t *hijo_der(binary_tree_t *nodo)
+binary_tree_t *hijo_der(const binary_tree_t *nodo)
 {
 	return (nodo->right);
 }
 
-binary_tree_t *hijo_izq(binary_tree_t *nodo)
+binary_tree_t *hijo_izq(const binary_tree_t *nodo)
 {
 	return (nodo->left);
+}
+
+int info_dato(const binary_tree_t *nodo)
+{
+	return (nodo->n);
 }
 
 binary_tree_t *existe(binary_tree_t *nodo)
