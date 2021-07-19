@@ -31,7 +31,7 @@ void insert_izq(binary_tree_t *a_insertar, binary_tree_t *lugar)
 {
 	lugar->left = a_insertar;
 }
-
+/*
 void swap_der(binary_tree_t *padre)
 {
 
@@ -41,7 +41,7 @@ void swap_izq(binary_tree_t *padre)
 {
 
 }
-
+*/
 binary_tree_t *crear_nodo(int valor)
 {
 	binary_tree_t *nuevo_nodo = malloc(sizeof(binary_tree_t));
