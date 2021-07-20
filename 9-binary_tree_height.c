@@ -11,7 +11,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 {
 	size_t right_height, left_height;
 
-	if (!tree || binary_tree_is_leaf(tree))
+	if (!tree)
 		return (0);
 	right_height = binary_tree_height(hijo_der(tree));
 	left_height = binary_tree_height(hijo_izq(tree));
