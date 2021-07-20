@@ -10,7 +10,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "trees.h"
+#include "structs.h"
 #include "handlers.h"
 
 #endif /* _BINARY_TREES_H_ */
