@@ -9,7 +9,7 @@
 
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
-	if (!tree)
+	if (!tree || !func)
 		return;
 	func(info_dato(tree));
 	binary_tree_preorder(izq(tree), func);
