@@ -1,11 +1,10 @@
 #ifndef HANDLERS_H
 #define HANDLERS_H
 
-/* Print */
+/* print */
 void binary_tree_print(const binary_tree_t *);
 
 /* handlers */
-
 binary_tree_t *padre(const binary_tree_t *nodo);
 binary_tree_t *hijo_der(const binary_tree_t *nodo);
 binary_tree_t *hijo_izq(const binary_tree_t *nodo);
@@ -19,7 +18,7 @@ void liberar_arbol(binary_tree_t *root);
 binary_tree_t *remover_izq(binary_tree_t *a_remover);
 binary_tree_t *remover_der(binary_tree_t *a_remover);
 
-/* Binary tree  functions */
+/* binary tree functions */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
@@ -33,5 +32,11 @@ size_t binary_tree_height(const binary_tree_t *tree);
 size_t binary_tree_depth(const binary_tree_t *tree);
 size_t binary_tree_size(const binary_tree_t *tree);
 size_t binary_tree_leaves(const binary_tree_t *tree);
+size_t binary_tree_nodes(const binary_tree_t *tree);
+int binary_tree_balance(const binary_tree_t *tree);
+int binary_tree_is_full(const binary_tree_t *tree);
+int binary_tree_is_perfect(const binary_tree_t *tree);
+binary_tree_t *binary_tree_sibling(binary_tree_t *node);
+binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 
 #endif /* HANDLERS_H */
