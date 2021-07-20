@@ -12,6 +12,6 @@ int binary_tree_balance(const binary_tree_t *tree)
 {
 	if (!tree)
 		return (0);
-	return ((int)binary_tree_height(hijo_izq(tree)) -
-	(int)binary_tree_height(hijo_der(tree)));
+	return ((int)binary_tree_height(izq(tree)) -
+	(int)binary_tree_height(der(tree)));
 }

@@ -9,6 +9,6 @@
 size_t binary_tree_size(const binary_tree_t *tree)
 {
 	if (tree)
-		return (1 + binary_tree_size(hijo_der(tree)) + binary_tree_size(hijo_izq(tree)));
+		return (1 + binary_tree_size(der(tree)) + binary_tree_size(izq(tree)));
 	return (0);
 }

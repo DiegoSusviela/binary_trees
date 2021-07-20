@@ -12,6 +12,6 @@ void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 	if (!tree)
 		return;
 	func(info_dato(tree));
-	binary_tree_preorder(hijo_izq(tree), func);
-	binary_tree_preorder(hijo_der(tree), func);
+	binary_tree_preorder(izq(tree), func);
+	binary_tree_preorder(der(tree), func);
 }

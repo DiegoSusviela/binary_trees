@@ -17,8 +17,8 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 	nodo = crear_nodo(value);
 	if (!nodo)
 		return (NULL);
-	if (hijo_der(parent))
-		aux = remover_der(hijo_der(parent));
+	if (der(parent))
+		aux = remover_der(der(parent));
 	insert_der(nodo, parent);
 	insert_der(aux, nodo);
 	return (nodo);

@@ -14,7 +14,7 @@ int binary_tree_is_full(const binary_tree_t *tree)
 		return (0);
 	if (binary_tree_is_leaf(tree))
 		return (1);
-	if (!binary_tree_is_full(tree->left) || !binary_tree_is_full(tree->right))
+	if (!binary_tree_is_full(izq(tree)) || !binary_tree_is_full(der(tree)))
 		return (0);
 	return (1);
 }

@@ -6,10 +6,9 @@ void binary_tree_print(const binary_tree_t *);
 
 /* handlers */
 binary_tree_t *padre(const binary_tree_t *nodo);
-binary_tree_t *hijo_der(const binary_tree_t *nodo);
-binary_tree_t *hijo_izq(const binary_tree_t *nodo);
+binary_tree_t *der(const binary_tree_t *nodo);
+binary_tree_t *izq(const binary_tree_t *nodo);
 int info_dato(const binary_tree_t *nodo);
-binary_tree_t *existe(binary_tree_t *nodo);
 void insert_der(binary_tree_t *a_insertar, binary_tree_t *lugar);
 void insert_izq(binary_tree_t *a_insertar, binary_tree_t *lugar);
 binary_tree_t *crear_nodo(int valor);

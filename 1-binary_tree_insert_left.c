@@ -17,8 +17,8 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	nodo = crear_nodo(value);
 	if (!nodo)
 		return (NULL);
-	if (hijo_izq(parent))
-		aux = remover_izq(hijo_izq(parent));
+	if (izq(parent))
+		aux = remover_izq(izq(parent));
 	insert_izq(nodo, parent);
 	insert_izq(aux, nodo);
 	return (nodo);

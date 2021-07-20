@@ -12,6 +12,6 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
 {
 	if (!tree || binary_tree_is_leaf(tree))
 		return (0);
-	return (1 + binary_tree_nodes(hijo_der(tree)) +
-	binary_tree_nodes(hijo_izq(tree)));
+	return (1 + binary_tree_nodes(der(tree)) +
+	binary_tree_nodes(izq(tree)));
 }

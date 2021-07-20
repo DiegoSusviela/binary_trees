@@ -11,7 +11,7 @@ void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
 {
 	if (!tree)
 		return;
-	binary_tree_postorder(hijo_izq(tree), func);
-	binary_tree_postorder(hijo_der(tree), func);
+	binary_tree_postorder(izq(tree), func);
+	binary_tree_postorder(der(tree), func);
 	func(info_dato(tree));
 }

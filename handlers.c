@@ -6,12 +6,12 @@ binary_tree_t *padre(const binary_tree_t *nodo)
 	return (nodo->parent);
 }
 
-binary_tree_t *hijo_der(const binary_tree_t *nodo)
+binary_tree_t *der(const binary_tree_t *nodo)
 {
 	return (nodo->right);
 }
 
-binary_tree_t *hijo_izq(const binary_tree_t *nodo)
+binary_tree_t *izq(const binary_tree_t *nodo)
 {
 	return (nodo->left);
 }
@@ -19,13 +19,6 @@ binary_tree_t *hijo_izq(const binary_tree_t *nodo)
 int info_dato(const binary_tree_t *nodo)
 {
 	return (nodo->n);
-}
-
-binary_tree_t *existe(binary_tree_t *nodo)
-{
-	if (nodo)
-		return (nodo);
-	return (NULL);
 }
 
 void insert_der(binary_tree_t *a_insertar, binary_tree_t *padre)
@@ -71,10 +64,10 @@ void liberar_nodo(binary_tree_t *nodo)
 
 void liberar_arbol(binary_tree_t *root)
 {
-	if (existe(hijo_der(root)))
-		liberar_arbol(hijo_der(root));
-	if (existe(hijo_izq(root)))
-		liberar_arbol(hijo_izq(root));
+	if (der(root))
+		liberar_arbol(der(root));
+	if (izq(root))
+		liberar_arbol(izq(root));
 	liberar_nodo(root);    
 }
 
