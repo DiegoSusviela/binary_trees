@@ -9,9 +9,9 @@ void binary_tree_delete(binary_tree_t *tree)
 	if (!tree)
 		return;
 	if (tree->right)
-		liberar_arbol(tree->right);
+		binary_tree_delete(tree->right);
 	if (tree->left)
-		liberar_arbol(tree->left);
-	free(nodo);
-	nodo = NULL;
+		binary_tree_delete(tree->left);
+	free(tree);
+	tree = NULL;
 }
