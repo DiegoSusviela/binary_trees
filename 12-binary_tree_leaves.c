@@ -1,5 +1,5 @@
 #include "binary_trees.h"
-#include "4-binary_tree_is_leaf.c"
+#include "handlers.c"
 
 /**
  * binary_tree_leaves - counts the leaves in a binary tree.

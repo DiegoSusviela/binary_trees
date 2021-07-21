@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+#include "handlers.c"
 
 /**
  * binary_tree_preorder - goes through a tree using pre-order traversal.

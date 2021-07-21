@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+#include "handlers.c"
 
 /**
  * binary_tree_sibling - finds the sibling of a node.
