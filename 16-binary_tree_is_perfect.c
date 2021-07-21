@@ -8,7 +8,6 @@
  * Return: 1 if the tree is perfect, otherwise 0.
  * if @tree is NULL, returns 0.
  */
-
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (binary_tree_is_full(tree) && !binary_tree_balance(tree))

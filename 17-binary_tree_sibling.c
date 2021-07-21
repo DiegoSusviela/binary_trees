@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-#include "handlers.c"
 
 /**
  * binary_tree_sibling - finds the sibling of a node.
@@ -7,12 +6,11 @@
  * Return: pointer to the sibling node,
  * if @node is NULL, the parent is NULL or has no sibling, returns NULL.
  */
-
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
-	if (!node || !padre(node))
+	if (!node || !node->parent)
 		return (NULL);
-	if (izq(padre(node)) == node)
-		return (der(padre(node)));
-	return (izq(padre(node)));
+	if ((node->parent->left) == node)
+		return (node->parent->right);
+	return (node->parent->left);
 }

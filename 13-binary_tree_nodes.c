@@ -7,11 +7,10 @@
  * Return: number of nodes  with at least 1 child in @tree,
  * if @tree is NULL, returns 0.
  */
-
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
 	if (!tree || binary_tree_is_leaf(tree))
 		return (0);
-	return (1 + binary_tree_nodes(der(tree)) +
-	binary_tree_nodes(izq(tree)));
+	return (1 + binary_tree_nodes(tree->right) +
+	binary_tree_nodes(tree->left));
 }

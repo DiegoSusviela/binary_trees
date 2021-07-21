@@ -7,11 +7,10 @@
  * Return: number of nodes  with at least 1 child in @tree,
  * if @tree is NULL, returns 0.
  */
-
 int binary_tree_balance(const binary_tree_t *tree)
 {
 	if (!tree)
 		return (0);
-	return ((int)binary_tree_height(izq(tree)) -
-	(int)binary_tree_height(der(tree)));
+	return ((int)binary_tree_height(tree->left) -
+	(int)binary_tree_height(tree->right));
 }
