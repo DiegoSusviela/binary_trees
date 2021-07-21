@@ -1,12 +1,11 @@
 #ifndef HANDLERS_H
 #define HANDLERS_H
-#include "handlers.c"
 
 /* print */
 void binary_tree_print(const binary_tree_t *);
 
 /* handlers */
-/**
+
 binary_tree_t *padre(const binary_tree_t *nodo);
 binary_tree_t *der(const binary_tree_t *nodo);
 binary_tree_t *izq(const binary_tree_t *nodo);
@@ -18,7 +17,7 @@ void liberar_nodo(binary_tree_t *nodo);
 void liberar_arbol(binary_tree_t *root);
 binary_tree_t *remover_izq(binary_tree_t *a_remover);
 binary_tree_t *remover_der(binary_tree_t *a_remover);
-**/
+
 
 /* binary tree functions */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
