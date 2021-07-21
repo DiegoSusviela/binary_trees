@@ -60,6 +60,7 @@ binary_tree_t *crear_nodo(int valor)
 void liberar_nodo(binary_tree_t *nodo)
 {
 	free(nodo);
+	nodo = NULL;
 }
 
 void liberar_arbol(binary_tree_t *root)
