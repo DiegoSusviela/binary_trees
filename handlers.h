@@ -1,5 +1,6 @@
 #ifndef HANDLERS_H
 #define HANDLERS_H
+#include "handlers.c"
 
 /* print */
 void binary_tree_print(const binary_tree_t *);
