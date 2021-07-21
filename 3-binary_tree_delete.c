@@ -1,14 +1,17 @@
 #include "binary_trees.h"
-#include "handlers.c"
 
 /**
  * binary_tree_delete - deletes an entire binary tree.
- * @tree: pointer to the root node of the tree to delete.
+ * @tree: pointer to the tree node of the tree to delete.
  */
-
 void binary_tree_delete(binary_tree_t *tree)
 {
 	if (!tree)
 		return;
-	liberar_arbol(tree);
+	if (der(tree))
+		liberar_arbol(der(tree));
+	if (izq(tree))
+		liberar_arbol(izq(tree));
+	free(nodo);
+	nodo = NULL;
 }
