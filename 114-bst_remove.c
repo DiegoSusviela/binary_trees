@@ -5,72 +5,61 @@
 * @nodo: todo.
 * Return: todo.
 */
-void menor_elemento(bst *nodo)
+bst_t *menor_elemento(bst_t *nodo)
 {
-	holder1 = nodo->parent;
+	while(nodo->left)
+		nodo = nodo->left;
+	return (nodo);
 
 }
 
 /**
-* remover - todo.
-* @nodo: todo.
-* Return: todo.
-*/
-void remover(bst *nodo)
-{
-	holder1 = nodo->parent;
-
-}
-
-/**
-* bst_remove - removes a node from a Binary Search Tree.
-* @root: pointer to the root node of the tree where you will remove a node.
-* @value: value to remove in the tree.
-* Return: pointer to the new root node after removing the desired value.
-*/
+ * bst_remove - Remove a node from a binary search tree
+ * @root: Pointer to the root of the tree
+ * @value: The value to remove
+ *
+ * Return: A pointer to the new root node
+ */
 bst_t *bst_remove(bst_t *root, int value)
 {
-	bst_t *a_rem, *candidato, *holder;
+	bst_t *holder = NULL;
 
-	a_rem = bst_search(root, value));
-	candidato = menor_elemento(a_rem);
-	if (!candidato || a_rem->left)
-		if (a_rem == root)
-		{
-			free(a_rem);
-			return (NULL);
-		}
-		return (root);
+	if (!root)
+		return (NULL);
 
-		candidato->left = a_rem->left;
-		if (candidato == a_rem->right)
-		{
-			if (a_rem->left)
-				a_rem->left->parent = candidato;
-		}
+	if (root->n > value)
+		root->left = bst_remove(root->left, value);
+	else
+		if (root->n < value)
+			root->right = bst_remove(root->right, value);
 		else
 		{
-			candidato->parent->left = candidato->right;
-			if (candidato->right)
-				candidato->right->parent = candidato->parent
-			if (a_rem->left)
-				a_rem->left->parent = candidato;
-			candidato->right = a_rem->right;
-			if (a_rem->right)
-				a_rem->right->parent = candidato;
+			if (root->left && root->right)
+			{
+				holder = menor_elemento(root->right);
+				root->n = holder->n;
+				root->right = bst_remove(root->right, holder->n);
+			}
+			else
+			{
+				if (!root->left && !root->right)
+				{
+					free(root);
+					return (NULL);
+				}
+				holder = root;
+				if (!root->left)
+					root = root->right;
+				else
+					if (!root->right)
+						root = root->left;
+				if (holder->parent->left == holder)
+					holder->parent->left = root;
+				else
+					holder->parent->right = root;
+				root->parent = holder->parent;
+				free(holder);
+			}
 		}
-		candidato->parent = a_rem->parent;
-
-				a_rem->right->parent = candidato;
-		}
-
-	if (a_rem->parent)
-	{
-		if (a_rem->parent->left == a_rem)
-			a_rem->parent->left = candidato;
-		else
-			a_rem->parent->right = candidato;
-	}
-
 	return (root);
 }
