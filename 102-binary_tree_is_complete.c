@@ -43,7 +43,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	return (1 + left_height);
 }
 
-// ---------------------------------------------------------
+/*----------------------------------------------------------------------*/
 
 /**
  * tree_almost_size - measures the size of a binary tree.
