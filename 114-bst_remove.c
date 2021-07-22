@@ -7,7 +7,7 @@
 */
 bst_t *menor_elemento(bst_t *nodo)
 {
-	while(nodo->left)
+	while (nodo->left)
 		nodo = nodo->left;
 	return (nodo);
 
