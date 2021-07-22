@@ -1,0 +1,42 @@
+#include "binary_trees.h"
+
+/**
+ * binary_tree_size - measures the size of a binary tree.
+ * @tree: pointer to the root node of the tree to measure the size.
+ * Return: size of the tree, if @tree is NULL, returns 0.
+ */
+
+size_t binary_tree_size(const binary_tree_t *tree)
+{
+	if (tree)
+		return (1 + binary_tree_size(tree->right) + binary_tree_size(tree->left));
+	return (0);
+}
+
+/**
+* binary_tree_is_complete - goes through a binary tree using level-order.
+* @tree: pointer to the root node of the tree to traverse.
+* @func: pointer to a function to call for each node.
+*/
+
+int checker(const binary_tree_t *tree, size_t lvl, size_t pichu)
+{
+	if (!tree)
+		return (1);
+	if (lvl >= pichu)
+		return (0);
+	return (checker(tree->left, (lvl * 2) + 1, pichu) && checker(tree->right, (lvl * 2) + 2, pichu));
+}
+
+/**
+* binary_tree_is_complete - goes through a binary tree using level-order.
+* @tree: pointer to the root node of the tree to traverse.
+* @func: pointer to a function to call for each node.
+*/
+
+int binary_tree_is_complete(const binary_tree_t *tree)
+{
+	if (!tree)
+		return (0);
+	return (help_complete(tree, 0, binary_tree_size(tree)));
+}
