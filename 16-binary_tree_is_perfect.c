@@ -31,8 +31,9 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 
 /**
-* cant_nodes - todo.
-* @height: todo.
+* cant_nodes - count the number of nodes in a binary tree.
+* @height: height.
+* Return: size of the tree a perfect tree of height.
 */
 size_t cant_nodes(size_t height)
 {
