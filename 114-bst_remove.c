@@ -30,7 +30,7 @@ void remover(bst *nodo)
 */
 bst_t *bst_remove(bst_t *root, int value)
 {
-	bst_t *a_rem, *candidato, holder;
+	bst_t *a_rem, *candidato, *holder;
 
 	a_rem = bst_search(root, value));
 	candidato = menor_elemento(a_rem);
