@@ -14,9 +14,10 @@ size_t binary_tree_size(const binary_tree_t *tree)
 }
 
 /**
-* binary_tree_is_complete - goes through a binary tree using level-order.
+* checker - goes through a binary tree using level-order.
 * @tree: pointer to the root node of the tree to traverse.
-* @func: pointer to a function to call for each node.
+* @lvl: pointer to a function to call for each node.
+* @pichu: pointer to a function to call for each node.
 */
 
 int checker(const binary_tree_t *tree, size_t lvl, size_t pichu)
@@ -25,7 +26,8 @@ int checker(const binary_tree_t *tree, size_t lvl, size_t pichu)
 		return (1);
 	if (lvl >= pichu)
 		return (0);
-	return (checker(tree->left, (lvl * 2) + 1, pichu) && checker(tree->right, (lvl * 2) + 2, pichu));
+	return (checker(tree->left, (lvl * 2) + 1, pichu) && checker(tree->right,
+	(lvl * 2) + 2, pichu));
 }
 
 /**
