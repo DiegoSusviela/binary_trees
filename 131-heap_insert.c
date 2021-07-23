@@ -1,8 +1,9 @@
 #include "binary_trees.h"
 
 /**
-* heap_extract - pending.
+* heap_insert - pending.
 * @root: pending.
+* @value: pending.
 * Return: pending.
 */
 heap_t *heap_insert(heap_t **root, int value)
