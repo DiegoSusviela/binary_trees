@@ -5,31 +5,31 @@
 * @tree: todo.
 * @value: todo.
 */
-void arreglo(avl_t *tree, int value)
+void arreglo(avl_t **tree, int value)
 {
 	int n;
 
-	n = binary_tree_balance(tree);
+	n = binary_tree_balance(*tree);
 	if (n > 1)
 	{
-		if (value < (tree)->left->n)
-			tree = binary_tree_rotate_left(tree);
+		if (value < (*tree)->left->n)
+			*tree = binary_tree_rotate_left(*tree);
 		else
 		{
-			tree->left = binary_tree_rotate_left(tree->left);
-			tree = binary_tree_rotate_right(tree);
+			(*tree)->left = binary_tree_rotate_left((*tree)->left);
+			*tree = binary_tree_rotate_right(*tree);
 		}
 	}
 	else
 	{
 		if (n < -1)
 		{
-			if (value > tree->right->n)
-				tree = binary_tree_rotate_left(tree);
+			if (value > (*tree)->right->n)
+				*tree = binary_tree_rotate_left(*tree);
 			else
 			{
-				tree->right = binary_tree_rotate_right(tree->right);
-				tree = binary_tree_rotate_left(tree);
+				(*tree)->right = binary_tree_rotate_right((*tree)->right);
+				*tree = binary_tree_rotate_left(*tree);
 			}
 		}
 	}
@@ -42,35 +42,35 @@ void arreglo(avl_t *tree, int value)
 * @value: value to store in the node to be inserted.
 * Return: pointer to the created node, or NULL on failure.
 */
-avl_t *avl_aux(avl_t *tree, int value)
+avl_t *avl_aux(avl_t **tree, int value)
 {
 	avl_t *nodo;
 
-	if (value < tree->n)
+	if (value < (*tree)->n)
 	{
-		if (!tree->left)
+		if (!(*tree)->left)
 		{
-			tree->left = binary_tree_node(tree, value);
-			return (tree->left);
+			(*tree)->left = binary_tree_node(*tree, value);
+			return ((*tree)->left);
 		}
 		else
 		{
-			nodo = avl_aux(tree->left, value);
+			nodo = avl_aux(&((*tree))->left, value);
 			if (nodo)
 				arreglo(tree, value);
 			return (nodo);
 		}
 	}
-	if (value > tree->n)
+	if (value > (*tree)->n)
 	{
-		if (!tree->right)
+		if (!(*tree)->right)
 		{
-			tree->right = binary_tree_node(tree, value);
-			return (tree->right);
+			(*tree)->right = binary_tree_node(*tree, value);
+			return ((*tree)->right);
 		}
 		else
 		{
-			nodo = avl_aux(tree->right, value);
+			nodo = avl_aux(&((*tree))->right, value);
 			if (nodo)
 			{
 				arreglo(tree, value);
@@ -94,5 +94,5 @@ avl_t *avl_insert(avl_t **tree, int value)
 		*tree = (avl_t *)binary_tree_node(NULL, value);
 		return (*tree);
 	}
-	return (avl_aux(*tree, value));
+	return (avl_aux(tree, value));
 }
