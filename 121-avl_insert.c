@@ -89,6 +89,8 @@ avl_t *avl_aux(avl_t **tree, int value)
 */
 avl_t *avl_insert(avl_t **tree, int value)
 {
+	if (!tree)
+		return (NULL);
 	if (!*tree)
 	{
 		*tree = (avl_t *)binary_tree_node(NULL, value);
