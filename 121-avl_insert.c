@@ -13,7 +13,7 @@ void arreglo(avl_t **tree, int value)
 	if (n > 1)
 	{
 		if (value < (*tree)->left->n)
-			*tree = binary_tree_rotate_left(*tree);
+			*tree = binary_tree_rotate_right(*tree);
 		if (value > (*tree)->left->n)
 		{
 			(*tree)->left = binary_tree_rotate_left((*tree)->left);
