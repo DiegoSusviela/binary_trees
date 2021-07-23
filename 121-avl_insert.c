@@ -14,7 +14,7 @@ void arreglo(avl_t **tree, int value)
 	{
 		if (value < (*tree)->left->n)
 			*tree = binary_tree_rotate_left(*tree);
-		else
+		if (value > (*tree)->left->n)
 		{
 			(*tree)->left = binary_tree_rotate_left((*tree)->left);
 			*tree = binary_tree_rotate_right(*tree);
@@ -26,7 +26,7 @@ void arreglo(avl_t **tree, int value)
 		{
 			if (value > (*tree)->right->n)
 				*tree = binary_tree_rotate_left(*tree);
-			else
+			if (value < (*tree)->right->n)
 			{
 				(*tree)->right = binary_tree_rotate_right((*tree)->right);
 				*tree = binary_tree_rotate_left(*tree);
