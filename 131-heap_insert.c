@@ -5,9 +5,9 @@
 * @root: pending.
 * Return: pending.
 */
-int heap_extract(heap_t **root)
+heap_t *heap_insert(heap_t **root, int value)
 {
 	if (!root || !*root)
-		return (0);
-	return (1);
+		return (NULL);
+	return (root);
 }
