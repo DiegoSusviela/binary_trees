@@ -13,28 +13,32 @@ void arreglo(avl_t **tree, int value)
 	if (n > 1)
 	{
 		if (value < (*tree)->left->n)
+		{
 			*tree = binary_tree_rotate_right(*tree);
+			return;
+		}
 		if (value > (*tree)->left->n)
 		{
 			(*tree)->left = binary_tree_rotate_left((*tree)->left);
 			*tree = binary_tree_rotate_right(*tree);
+			return;
 		}
 	}
-	else
+	if (n < -1)
 	{
-		if (n < -1)
+		if (value > (*tree)->right->n)
 		{
-			if (value > (*tree)->right->n)
-				*tree = binary_tree_rotate_left(*tree);
-			if (value < (*tree)->right->n)
-			{
-				(*tree)->right = binary_tree_rotate_right((*tree)->right);
-				*tree = binary_tree_rotate_left(*tree);
-			}
+			*tree = binary_tree_rotate_left(*tree);
+			return;	
+		}
+		if (value < (*tree)->right->n)
+		{
+			(*tree)->right = binary_tree_rotate_right((*tree)->right);
+			*tree = binary_tree_rotate_left(*tree);
+			return;
 		}
 	}
 }
-
 
 /**
 * avl_aux - inserts a value in an AVL Tree.
