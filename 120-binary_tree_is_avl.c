@@ -60,5 +60,5 @@ int binary_tree_is_bst(const binary_tree_t *tree)
  */
 int binary_tree_is_avl(const binary_tree_t *tree)
 {
-	return (binary_tree_is_bst(tree) && (binary_tree_is_complete(tree)))
+	return (binary_tree_is_bst(tree) && (binary_tree_is_complete(tree)));
 }
