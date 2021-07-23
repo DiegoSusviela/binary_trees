@@ -8,6 +8,6 @@
 int heap_extract(heap_t **root)
 {
 	if (!root || !*root)
-		return (NULL);
+		return (0);
 	return (1);
 }
