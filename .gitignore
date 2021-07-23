@@ -2,3 +2,5 @@
 *#
 *main.c
 binary_tree_print.c
+test/*
+102-copy.c

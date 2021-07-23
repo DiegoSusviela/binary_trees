@@ -29,7 +29,7 @@ void arreglo(avl_t **tree, int value)
 		if (value > (*tree)->right->n)
 		{
 			*tree = binary_tree_rotate_left(*tree);
-			return;	
+			return;
 		}
 		if (value < (*tree)->right->n)
 		{
