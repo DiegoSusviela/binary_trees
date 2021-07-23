@@ -8,14 +8,13 @@
 */
 avl_t *array_to_avl(int *array, size_t size)
 {
-	size_t i, j;
-
+	size_t i;
+	avl_t *tree = NULL;
 	if (!array)
 		return (NULL);
 
 	for (i = 0; i < size; i++)
-		if (!avl_insert(&tree, array[i] == 0))
-			return (NULL);
+		avl_insert(&tree, array[i]);
 
 	return (tree);
 }
